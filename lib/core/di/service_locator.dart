@@ -6,14 +6,12 @@ final serviceLocator = GetIt.instance;
 
 @injectableInit
 Future<void> configureDependancies() => serviceLocator.init();
-  // serviceLocator.registerFactory<AuthRemoteDataSource>(
-  //   () => AuthRemoteDataSourceImpl(),
-  // );
-  // serviceLocator.registerLazySingleton<AuthRemoteDataSource>(
-  //   () => AuthRemoteDataSourceImpl(),
-  // );
-  // serviceLocator.registerSingleton<AuthRemoteDataSource>(
-  //   AuthRemoteDataSourceImpl()
-  // );
-  
-
+// serviceLocator.registerFactory<AuthRemoteDataSource>(
+//   () => AuthRemoteDataSourceImpl(),
+// );
+// serviceLocator.registerLazySingleton<AuthRemoteDataSource>(
+//   () => AuthRemoteDataSourceImpl(),
+// );
+// serviceLocator.registerSingleton<AuthRemoteDataSource>(
+//   AuthRemoteDataSourceImpl()
+// );

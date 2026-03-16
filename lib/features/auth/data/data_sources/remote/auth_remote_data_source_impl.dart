@@ -7,9 +7,10 @@ import 'package:ecommerce/features/auth/data/models/login_response.dart';
 import 'package:ecommerce/features/auth/data/models/register_request.dart';
 import 'package:ecommerce/features/auth/data/models/register_response.dart';
 import 'package:injectable/injectable.dart';
-@Singleton(as:AuthRemoteDataSource )
+
+@Singleton(as: AuthRemoteDataSource)
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
-  final Dio _dio ;
+  final Dio _dio;
   const AuthRemoteDataSourceImpl(this._dio);
   @override
   Future<LoginResponse> login(LoginRequest request) async {
@@ -22,9 +23,9 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     } catch (exception) {
       String? message;
       if (exception is DioException) {
-        exception.response?.data['message'];
+       message = exception.response?.data['message'];
       }
-      throw RemoteException(message??'Failed To Login');
+      throw RemoteException(message ?? 'Failed To Login');
     }
   }
 

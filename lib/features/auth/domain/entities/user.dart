@@ -4,6 +4,4 @@ class User {
   final String role;
 
   const User({required this.name, required this.email, required this.role});
-
-
 }

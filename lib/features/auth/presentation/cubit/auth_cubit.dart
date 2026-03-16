@@ -11,7 +11,7 @@ class AuthCubit extends Cubit<AuthState> {
   final Register _register;
   final Login _login;
 
-  AuthCubit(this._login,this._register) : super(AuthInitial());
+  AuthCubit(this._login, this._register) : super(AuthInitial());
   Future<void> register(RegisterRequest request) async {
     emit(RegisterLoading());
     final result = await _register(request);

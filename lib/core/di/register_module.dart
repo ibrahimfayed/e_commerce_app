@@ -6,7 +6,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 @module
 abstract class RegisterModule {
   @singleton
-  Dio get dio => Dio(//same as Dio dio() => Dio();
+  Dio get dio => Dio(
+    //same as Dio dio() => Dio();
     BaseOptions(
       baseUrl: APIConstants.baseUrl,
       receiveDataWhenStatusError: true,
