@@ -23,7 +23,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     } catch (exception) {
       String? message;
       if (exception is DioException) {
-       message = exception.response?.data['message'];
+        message = exception.response?.data['message'];
       }
       throw RemoteException(message ?? 'Failed To Login');
     }

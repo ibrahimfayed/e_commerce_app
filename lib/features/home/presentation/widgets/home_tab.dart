@@ -67,11 +67,12 @@ class _HomeTabState extends State<HomeTab> {
                               const SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2,
                               ),
-                          itemBuilder: (_, index) =>  CategoryItem(state.categories[index]),
+                          itemBuilder: (_, index) =>
+                              CategoryItem(state.categories[index]),
                           itemCount: state.categories.length,
                           scrollDirection: Axis.horizontal,
                         );
-                      }else{ 
+                      } else {
                         return const SizedBox();
                       }
                     },
