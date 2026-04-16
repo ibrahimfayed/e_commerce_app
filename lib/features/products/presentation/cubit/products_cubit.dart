@@ -1,13 +1,14 @@
-import 'package:ecommerce/features/home/presentation/cubit/home_states.dart';
 import 'package:ecommerce/features/products/domain/use_cases/get_products.dart';
 import 'package:ecommerce/features/products/presentation/cubit/products_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
-@injectable//عشان أنا هحتاج أنشأinstance جديد في كل مرة أدوس علي products لأنinstace بيتشال منwidget tree لما أطلع
+@injectable //عشان أنا هحتاج أنشأinstance جديد في كل مرة أدوس علي products لأنinstace بيتشال منwidget tree لما أطلع
 class ProductsCubit extends Cubit<ProductsState> {
   final GetProducts _getProducts;
   ProductsCubit(this._getProducts) : super(ProductsInitial());
+  int productQuantity=1;
+
   Future<void> getProducts({String? categoryId}) async {
     emit(GetProductsLoading());
     final result = await _getProducts(categoryId: categoryId);
@@ -15,5 +16,9 @@ class ProductsCubit extends Cubit<ProductsState> {
       (failure) => emit(GetProductsError(failure.message)),
       (products) => emit(GetProductsSuccess(products)),
     );
+  }
+  void changeProudctQuantity(int quantity){
+  productQuantity = quantity;
+  emit(ProductQuantityChanged());
   }
 }

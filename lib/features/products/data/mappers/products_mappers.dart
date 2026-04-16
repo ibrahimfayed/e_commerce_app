@@ -13,6 +13,6 @@ extension ProductsMappers on ProductModel {
     price: price,
     imageCoverUrl: imageCoverUrl,
     ratingsAverage: ratingsAverage,
-    priceAfterDiscount: priceAfterDiscount
+    priceAfterDiscount: priceAfterDiscount,
   );
 }
